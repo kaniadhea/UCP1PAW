@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Data Management</title>
+</head>
+<body>
+    <h1>Data Rumah Sakit</h1>
+    <a href="/add">Tambah Data</a>
+    <table border ="1">
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Aksi</th>
+        </tr>
+        <% data.forEach(function(item) { %>
+            <tr>
+                <td><%= item.id %></td>
+                <td><%= item.nama %></td>
+                <td><%= item.alamat %></td>
+                <td>
+                    <a href="/edit/<%= item.id %>">Edit</a>
+                    <a href="/delete/<%= item.id %>">Hapus</a>
+                </td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
